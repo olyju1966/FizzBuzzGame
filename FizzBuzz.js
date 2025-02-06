@@ -1,13 +1,16 @@
+const div = {
+    3: "Fizz",
+    5: "Buzz"
+};
 for(let i = 1; i <= 100; i++) {
     let word = "";
-    if (i % 3 === 0) {
-        word += "Fizz";
-    } 
-    if (i % 5 === 0) {
-        word += "Buzz"
-    } 
+    for (const d of Object.keys(div)) {
+        if (i % d === 0)
+            word += div[d];
+    }
     if (!word) { 
-        word = i;
+        alert(i);
+        continue;
     }
     alert(word);
 }
